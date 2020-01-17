@@ -1,0 +1,25 @@
+{
+    "name": "koa-better-json",
+    "version": "1.0.0",
+    "description": "Koa middleware returning JSON encoded response.",
+    "license": "MIT",
+    "repository": "https://github.com/damianobarbati/koa-better-json.git",
+    "author": "Damiano Barbati <damiano.barbati@gmail.com> (https://github.com/damianobarbati)",
+    "type": "module",
+    "main": "src/index.js",
+    "exports": {
+        ".": "src/index.js"
+    },
+    "scripts": {
+        "test": "npx --no-install -n '-r esm' jasmine --random=false src/*.spec.js"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.8.0",
+        "eslint-plugin-jasmine": "^4.1.0",
+        "esm": "^3.2.25",
+        "jasmine": "^3.5.0",
+        "koa": "^2.11.0",
+        "supertest": "^4.0.2"
+    }
+}
