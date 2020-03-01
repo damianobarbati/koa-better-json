@@ -5,11 +5,7 @@
     "license": "MIT",
     "repository": "https://github.com/damianobarbati/koa-better-json.git",
     "author": "Damiano Barbati <damiano.barbati@gmail.com> (https://github.com/damianobarbati)",
-    "type": "module",
     "main": "src/index.js",
-    "exports": {
-        ".": "src/index.js"
-    },
     "scripts": {
         "test": "npx --no-install -n '-r esm' jasmine --random=false src/*.spec.js"
     },
