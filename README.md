@@ -1,6 +1,9 @@
 # koa-better-json
 
 Koa middleware returning JSON encoded response.
+The middleware will encode only:
+- pathname having an empty or `.json` extension
+- encodable body
 
 ## Usage
 
