@@ -6,6 +6,7 @@
     "repository": "https://github.com/damianobarbati/koa-better-json.git",
     "author": "Damiano Barbati <damiano.barbati@gmail.com> (https://github.com/damianobarbati)",
     "main": "src/index.js",
+    "type": "module",
     "scripts": {
         "test": "npx --no-install -n '-r esm' jasmine --random=false src/*.spec.js"
     },
