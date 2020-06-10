@@ -1,4 +1,4 @@
-import { Readable } from 'stream';
+import stream from 'stream';
 import path from 'path';
 
 const main = ({ spaces = 4, replacer = undefined } = {}) => async (ctx, next) => {
@@ -14,7 +14,7 @@ const main = ({ spaces = 4, replacer = undefined } = {}) => async (ctx, next) =>
         // body is not a buffer
         !Buffer.isBuffer(body) &&
         // body is not a readable stream
-        !(body instanceof Readable) &&
+        !(body instanceof stream.Readable) &&
         // body is not an "old style" readable stream
         !(body && typeof body === 'object' && typeof body.pipe === 'function');
 

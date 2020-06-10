@@ -1,12 +1,24 @@
 import { Readable } from 'stream';
 import request from 'supertest';
 import koa from 'koa';
+import compress from 'koa-compress';
 import json from './index.js';
 
 describe('primitives/objects', () => {
     it('string', async () => {
         const app = new koa();
         app.use(json());
+        app.use(ctx => ctx.body = 'foobar');
+
+        const response = await request(app.listen()).get('/');
+
+        expect(response.text).toEqual('"foobar"');
+    });
+
+    it('string + compress', async () => {
+        const app = new koa();
+        app.use(json());
+        app.use(compress());
         app.use(ctx => ctx.body = 'foobar');
 
         const response = await request(app.listen()).get('/');
