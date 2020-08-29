@@ -1,0 +1,8 @@
+*.yml
+*.md
+.idea/
+node_modules/
+coverage/
+docs/index*.html
+docs/openapi*.json
+.DS_Store
