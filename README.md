@@ -5,7 +5,7 @@ The middleware will encode only:
 - pathname having an empty or `.json` extension
 - encodable body
 
-**Why not simply use `koa-json`?**   
+**Why not simply use `koa-json`?**  
 Because I can't return a `null` payload: `ctx.body = null` results in a 204 thus empty response.  
 Once this PR will be merged <https://github.com/koajs/koa/pull/1421> I will finally detonate this repository and package.
 
