@@ -10,9 +10,10 @@ describe('primitives/objects', () => {
     app.use(json());
     app.use((ctx) => (ctx.body = 'foobar'));
 
-    const response = await request(app.listen()).get('/');
-
+    const server = app.listen();
+    const response = await request(server).get('/');
     expect(response.text).toEqual('"foobar"');
+    server.close();
   });
 
   it('string + compress', async () => {
@@ -21,9 +22,10 @@ describe('primitives/objects', () => {
     app.use(compress());
     app.use((ctx) => (ctx.body = 'foobar'));
 
-    const response = await request(app.listen()).get('/');
-
+    const server = app.listen();
+    const response = await request(server).get('/');
     expect(response.text).toEqual('"foobar"');
+    server.close();
   });
 
   it('object', async () => {
@@ -31,9 +33,10 @@ describe('primitives/objects', () => {
     app.use(json());
     app.use((ctx) => (ctx.body = { foo: 'bar' }));
 
-    const response = await request(app.listen()).get('/');
-
+    const server = app.listen();
+    const response = await request(server).get('/');
     expect(response.text).toEqual('{\n    "foo": "bar"\n}');
+    server.close();
   });
 
   it('object with null/undefined values', async () => {
@@ -41,9 +44,10 @@ describe('primitives/objects', () => {
     app.use(json());
     app.use((ctx) => (ctx.body = { foo: null, bar: undefined }));
 
-    const response = await request(app.listen()).get('/');
-
+    const server = app.listen();
+    const response = await request(server).get('/');
     expect(response.text).toEqual('{\n    "foo": null\n}');
+    server.close();
   });
 
   it('spaces are honored', async () => {
@@ -51,9 +55,10 @@ describe('primitives/objects', () => {
     app.use(json({ spaces: 0 }));
     app.use((ctx) => (ctx.body = { foo: 'bar', a: 1 }));
 
-    const response = await request(app.listen()).get('/');
-
+    const server = app.listen();
+    const response = await request(server).get('/');
     expect(response.text).toEqual('{"foo":"bar","a":1}');
+    server.close();
   });
 
   it('do not encode if pathname has extension or extension is not .json', async () => {
@@ -66,13 +71,15 @@ describe('primitives/objects', () => {
       else ctx.body = 'ok';
     });
 
-    const response2 = await request(app.listen()).get('/test.txt');
-    const response3 = await request(app.listen()).get('/test.json');
-    const response4 = await request(app.listen()).get('/test');
+    const server = app.listen();
+    const response2 = await request(server).get('/test.txt');
+    const response3 = await request(server).get('/test.json');
+    const response4 = await request(server).get('/test');
 
     expect(response2.text).toEqual('ok');
     expect(response3.text).toEqual('"ok"');
     expect(response4.text).toEqual('"ok"');
+    server.close();
   });
 
   // waiting for https://github.com/koajs/koa/pull/1421
@@ -83,9 +90,10 @@ describe('primitives/objects', () => {
     app.use(json());
     app.use((ctx) => (ctx.body = null));
 
-    const response = await request(app.listen()).get('/');
-
+    const server = app.listen();
+    const response = await request(server).get('/');
     expect(response.text).toEqual('null');
+    server.close();
   });
 });
 
@@ -102,10 +110,11 @@ describe('streams', () => {
       ctx.body = stream;
     });
 
-    const response = await request(app.listen()).get('/');
-
+    const server = app.listen();
+    const response = await request(server).get('/');
     expect(response.status).toEqual(200);
     expect(response.headers).toEqual(expect.objectContaining({ 'content-type': 'application/octet-stream' }));
     expect(response.body.toString()).toEqual('<html></html>');
+    server.close();
   });
 });
