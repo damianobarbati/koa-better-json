@@ -1,6 +1,6 @@
 {
   "name": "koa-better-json",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Koa middleware returning JSON encoded response.",
   "license": "MIT",
   "repository": "https://github.com/damianobarbati/koa-better-json.git",
