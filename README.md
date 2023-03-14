@@ -1,26 +1,27 @@
 # koa-better-json
 
 Koa middleware returning JSON encoded response.
+
 The middleware will encode only:
 - pathname having an empty or `.json` extension
 - encodable body
 
-**Why not simply use `koa-json`?**  
-Because I can't return a `null` payload: `ctx.body = null` results in a 204 thus empty response.  
-Once this PR will be merged <https://github.com/koajs/koa/pull/1421> I will finally detonate this repository and package.
+Why not simply use the most common `koa-json`?
+`koa-json` has the following behaviours / limitations:
+- you can't return a `null` payload (eg: `ctx.body = null`) as this results in a 204 empty response
+- you can't return a plain string payload (eg: `ctx.body = 'hello there') as this results in plain text response
 
-## Requirements
-- nodejs v14.15+
+If you need to send valid `null` and plain values response then this middleware is for you.
 
 ## Usage
 
 Install:
-```bash
+```sh
 yarn add koa-better-json
 ```
 
 Usage:
-```javascript
+```js
 import http from 'http';
 import koa from 'koa';
 import json from 'koa-better-json';
@@ -28,18 +29,15 @@ import json from 'koa-better-json';
 const app = new koa()
 app.use(json());
 app.use(ctx => ctx.body = { foo: 'bar' });
+app.use(ctx => ctx.body = null);
+app.use(ctx => ctx.body = 'abc');
 
 const server = http
-    .createServer(app.callback())
-    .listen(8080, console.log);
-```
-
-Options passing (custom spacing and/or replacer):
-```javascript
-app.use(json({ spaces: 0 })); // pretty printing disabled
-app.use(json({ spaces: 2 })); // pretty printing with 2 spaces
+  .createServer(app.callback())
+  .listen(8080, console.log);
 ```
 
 ## Options
- - `spaces`: JSON spaces, default `4`
- - `replacer`: JSON replacer function
+- `pretty` default to pretty response (default to `true`)
+- `spaces` JSON spaces (default to `2`)
+- `replacer` JSON replacer (default to `undefined`)

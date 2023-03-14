@@ -2,6 +2,7 @@ import { Readable } from 'stream';
 import request from 'supertest';
 import koa from 'koa';
 import compress from 'koa-compress';
+import { describe, it, expect } from 'vitest';
 import json from './index.js';
 
 describe('primitives/objects', () => {
