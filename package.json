@@ -15,7 +15,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "eslint-config-xs": "^1.6.1",
+    "eslint-config-xs": "^1.6.2",
     "koa": "^2.14.1",
     "koa-compress": "^5.1.0",
     "supertest": "^6.3.3",
