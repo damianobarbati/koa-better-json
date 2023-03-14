@@ -22,5 +22,5 @@ jobs:
       - name: test
         run: |
           yarn install
-          yarn test
+          yarn cjs
           yarn build
