@@ -1,0 +1,1 @@
+# keep .npmignore otherwise .gitignore is applied excluding cjs folder from publishing!

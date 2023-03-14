@@ -275,7 +275,7 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.20.7", "@babel/parser@^7.21.0", "@babel/parser@^7.21.2":
+"@babel/parser@^7.12.5", "@babel/parser@^7.20.7", "@babel/parser@^7.21.0", "@babel/parser@^7.21.2":
   version "7.21.2"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.21.2.tgz#dacafadfc6d7654c3051a66d6fe55b6cb2f2a0b3"
   integrity sha512-URpaIJQwEkEC2T9Kn+Ai6Xe/02iNaVCuT/PtoRz3GPVJVDpPd7mLo+VddTbhCRU9TXqW5mSrQfXZyi8kDKOVpQ==
@@ -1565,6 +1565,13 @@ asap@^2.0.0:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   integrity sha512-BSHWgDSAiKs50o2Re8ppvp3seVHXSRM44cdSsT9FfNEUUZLOGWVCsiWaRPWM1Znn+mqZ1OfVZ3z3DWEzSp7hRA==
+
+ascjs@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/ascjs/-/ascjs-5.0.1.tgz#c32fc91945e5d816ffbe63c7f787d6516ad40a12"
+  integrity sha512-1d/QdICzpywXiP53/Zz3fMdaC0/BB1ybLf+fK+QrqY8iyXNnWUHUrpmrowueXeswo+O+meJWm43TJSg2ClP3Sg==
+  dependencies:
+    "@babel/parser" "^7.12.5"
 
 assertion-error@^1.1.0:
   version "1.1.0"

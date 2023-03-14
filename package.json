@@ -5,16 +5,26 @@
   "license": "MIT",
   "repository": "https://github.com/damianobarbati/koa-better-json.git",
   "author": "Damiano Barbati <damiano.barbati@gmail.com> (https://github.com/damianobarbati)",
-  "main": "src/index.js",
-  "type": "module",
   "engines": {
     "node": ">=18"
   },
+  "main": "src/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./cjs/index.js"
+    },
+    "./cjs/index.js": "./cjs/index.js"
+  },
   "scripts": {
     "eslint": "eslint --ignore-path .gitignore",
-    "test": "vitest run"
+    "test": "vitest run",
+    "prebuild:cjs": "rm -rf cjs",
+    "cjs": "mkdir cjs && ascjs src cjs"
   },
   "devDependencies": {
+    "ascjs": "^5.0.1",
     "eslint-config-xs": "^1.6.2",
     "koa": "^2.14.1",
     "koa-compress": "^5.1.0",
