@@ -6,7 +6,7 @@
   "repository": "https://github.com/damianobarbati/koa-better-json.git",
   "author": "Damiano Barbati <damiano.barbati@gmail.com> (https://github.com/damianobarbati)",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.1"
   },
   "main": "src/index.js",
   "type": "module",
@@ -25,10 +25,10 @@
   },
   "devDependencies": {
     "ascjs": "^5.0.1",
-    "eslint-config-xs": "^1.6.2",
-    "koa": "^2.14.1",
-    "koa-compress": "^5.1.0",
+    "eslint-config-xs": "^2.0.3",
+    "koa": "^2.14.2",
+    "koa-compress": "^5.1.1",
     "supertest": "^6.3.3",
-    "vitest": "^0.29.2"
+    "vitest": "^0.31.1"
   }
 }

@@ -24,6 +24,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         run: |
           yarn install
-          yarn test
+          yarn test ./src
           yarn cjs
           npm publish
