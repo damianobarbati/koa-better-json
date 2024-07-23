@@ -24,11 +24,11 @@
     "cjs": "mkdir cjs && ascjs src cjs"
   },
   "devDependencies": {
-    "ascjs": "^5.0.1",
-    "eslint-config-xs": "^2.0.3",
-    "koa": "^2.14.2",
+    "ascjs": "^6.0.3",
+    "eslint-config-xs": "^2.6.10",
+    "koa": "^2.15.3",
     "koa-compress": "^5.1.1",
-    "supertest": "^6.3.3",
-    "vitest": "^0.31.1"
+    "supertest": "^7.0.0",
+    "vitest": "^2.0.4"
   }
 }
