@@ -2,7 +2,7 @@ import path from "node:path";
 import stream from "node:stream";
 
 const main =
-  ({ spaces = 4, replacer = undefined } = {}) =>
+  ({ spaces = 2, replacer = undefined } = {}) =>
   async (ctx, next) => {
     await next();
 

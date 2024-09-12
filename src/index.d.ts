@@ -1,11 +1,6 @@
 import type * as Koa from "koa";
 
-declare function json(opts?: {
-  pretty?: boolean | undefined;
-  spaces?: number | undefined;
+export default function main(opts?: {
+  spaces?: number;
   replacer?: any;
 }): Koa.Middleware;
-
-declare namespace json {}
-
-export = json;
