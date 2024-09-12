@@ -17,12 +17,12 @@ If you need to send valid `null` and plain values response then this middleware 
 
 Install:
 ```sh
-yarn add koa-better-json
+pnpm add koa-better-json
 ```
 
 Usage:
 ```js
-import http from 'http';
+import http from 'node:http';
 import koa from 'koa';
 import json from 'koa-better-json';
 
