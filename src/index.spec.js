@@ -36,7 +36,7 @@ describe("primitives/objects", () => {
 
     const server = app.listen();
     const response = await request(server).get("/");
-    expect(response.text).toEqual('{\n    "foo": "bar"\n}');
+    expect(response.text).toEqual('{\n  "foo": "bar"\n}');
     server.close();
   });
 
@@ -47,7 +47,7 @@ describe("primitives/objects", () => {
 
     const server = app.listen();
     const response = await request(server).get("/");
-    expect(response.text).toEqual('{\n    "foo": null\n}');
+    expect(response.text).toEqual('{\n  "foo": null\n}');
     server.close();
   });
 
