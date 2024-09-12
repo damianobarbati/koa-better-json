@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "eslint-config-xs/node"
-  ],
-  "rules": {
-
-    "node/no-unpublished-import": "off"
-  }
-}
